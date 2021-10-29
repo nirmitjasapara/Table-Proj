@@ -1,0 +1,7 @@
+Sitemap: ../sitemap.xml
+User-agent: *
+Crawl-delay: 5
+Disallow: /home
+Disallow: /auth
+Disallow: /company
+
