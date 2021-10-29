@@ -18,7 +18,7 @@ export default function Graph(props) {
   }, [props.data.series]);
   return (
     <section>
-      {props.data.error ? (
+      {props.data.error || !x.length ? (
         <p className="red">{props.data.error}</p>
       ) : (
         <Plot
@@ -35,7 +35,7 @@ export default function Graph(props) {
           layout={{
             width: window.innerWidth - 40,
             height: 400,
-            title: "Title",
+            title: props.data.company.name,
             plot_bgcolor: "#000",
             paper_bgcolor: "#000",
             font: {

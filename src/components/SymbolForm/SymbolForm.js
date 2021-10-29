@@ -6,11 +6,15 @@ import "./SymbolForm.css";
 export default function SymbolForm(props) {
   const [symbol, setSymbol] = useState(null);
   const [series, setSeries] = useState([]);
+  const [company, setCompany] = useState([]);
   const [error, setError] = useState(null);
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (props.companies.find(c => c.symbol == symbol)) {
+    const company = props.companies.find(c => c.symbol == symbol);
+    console.log(company);
+    if (company) {
+      setCompany(company);
       ApiService.getTimeSeries({ symbol })
         .then(t => setSeries(t))
         .catch(e => setError(e));
@@ -18,7 +22,7 @@ export default function SymbolForm(props) {
   };
 
   useEffect(() => {
-    props.setData({ error, series });
+    props.setData({ error, series, company });
   }, [series, error]);
 
   return (

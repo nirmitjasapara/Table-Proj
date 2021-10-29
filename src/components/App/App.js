@@ -12,7 +12,8 @@ function App() {
       <div className="App_main">
         <Switch>
           <Route exact path={"/"} component={LandingPage} />
-          <Route exact path={"/visualize/:symbol"} component={HomePage} />
+          <Route path={"/visualize/:symbol"} component={HomePage} />
+          <Route path={"/visualize"} component={HomePage} />
         </Switch>
       </div>
     </div>
