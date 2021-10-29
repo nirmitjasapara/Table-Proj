@@ -8,10 +8,11 @@ export default function SymbolForm(props) {
   const [series, setSeries] = useState([]);
   const [company, setCompany] = useState([]);
   const [error, setError] = useState(null);
+  const { setData } = props;
 
   const handleSubmit = event => {
     event.preventDefault();
-    const company = props.companies.find(c => c.symbol == symbol);
+    const company = props.companies.find(c => c.symbol === symbol);
     console.log(company);
     if (company) {
       setCompany(company);
@@ -22,8 +23,8 @@ export default function SymbolForm(props) {
   };
 
   useEffect(() => {
-    props.setData({ error, series, company });
-  }, [series, error]);
+    setData({ error, series, company });
+  }, [series, error, company, setData]);
 
   return (
     <section>
