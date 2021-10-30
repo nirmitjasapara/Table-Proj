@@ -43,6 +43,16 @@ const ApiService = {
         console.log(json);
         return json;
       });
+  },
+  getCompanyRef() {
+    return fetch(`${config.TWELVE_DATA_ENDPOINT}`)
+      .then(res =>
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      )
+      .then(json => {
+        console.log(json);
+        return json;
+      });
   }
 };
 

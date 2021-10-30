@@ -14,6 +14,9 @@ export default function Header() {
           Visualize
         </Link>
         <span className="divider">|</span>
+        {
+          // TODO: Add an API call to a reference to allow adding more companies
+        }
         <Link to="/add" className="nav-button">
           Request
         </Link>

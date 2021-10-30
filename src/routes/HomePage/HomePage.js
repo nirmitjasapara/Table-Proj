@@ -10,11 +10,13 @@ export default class HomePage extends Component {
     data: { error: null, series: [] },
     error: null
   };
+  // Get and Store the symbols list. On error, an error message shows
   componentDidMount() {
     ApiService.getAllSymbols()
       .then(c => this.setState({ companies: c }))
       .catch(e => this.setState({ error: e }));
   }
+  // Callback function passed to symbolform to set the time series data
   setData = data => {
     this.setState({ data: data });
   };

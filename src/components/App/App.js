@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import LandingPage from "../../routes/LandingPage/LandingPage";
 import HomePage from "../../routes/HomePage/HomePage";
 import "./App.css";
+import AddPage from "../../routes/AddPage/AddPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path={"/"} component={LandingPage} />
           <Route path={"/visualize/:symbol"} component={HomePage} />
           <Route path={"/visualize"} component={HomePage} />
+          <Route path={"/add"} component={AddPage} />
         </Switch>
       </div>
     </div>

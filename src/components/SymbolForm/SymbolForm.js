@@ -10,6 +10,8 @@ export default function SymbolForm(props) {
   const [error, setError] = useState(null);
   const { setData } = props;
 
+  // On submit find the company for the symbol in the input.
+  // If it exists, store the company and fetch the series data for the symbol.
   const handleSubmit = event => {
     event.preventDefault();
     const company = props.companies.find(c => c.symbol === symbol);
@@ -22,6 +24,8 @@ export default function SymbolForm(props) {
     } else alert("Invalid Symbol");
   };
 
+  // This gets run after the submit changes series, error, and company.
+  // All of which get passed to the Graph component
   useEffect(() => {
     setData({ error, series, company });
   }, [series, error, company, setData]);
