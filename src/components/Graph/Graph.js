@@ -34,7 +34,7 @@ export default function Graph(props) {
           ]}
           layout={{
             width: window.innerWidth - 40,
-            height: 400,
+            height: 500,
             title: props.data.company.name,
             plot_bgcolor: "#000",
             paper_bgcolor: "#000",
@@ -43,7 +43,7 @@ export default function Graph(props) {
             },
             margin: {
               l: "40",
-              b: "40"
+              b: "120"
             }
           }}
         />
