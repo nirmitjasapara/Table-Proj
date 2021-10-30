@@ -10,7 +10,7 @@ export default function Graph(props) {
     let xarr = Array.from({ length: props.data.series.length });
     let yarr = Array.from({ length: props.data.series.length });
     props.data.series.forEach((point, i) => {
-      xarr[i] = point.datetime;
+      xarr[i] = new Date(point.datetime).toDateString();
       yarr[i] = point.price;
     });
     setX(xarr);
